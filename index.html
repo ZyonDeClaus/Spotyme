@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MusikKita - Temukan Musik Favoritmu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body class="bg-light">
+    <!-- step 2  -->
+    <div x-data="musicApp()">
+      <!-- step 3 sidebar -->
+      <aside class="sidebar bg-white shadow-sm">
+        <div class="d-flex align-items-center p-3 border-bottom">
+          <div class="bg-danger text-white p-2 rounded me-2">
+            <i class="bi bi-music-note-beamed fs-5"></i>
+          </div>
+          <h5 class="mb-0 fw-bold">MusikKita</h5>
+        </div>
+        <nav class="py-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a href="#" class="nav-link active px-3 py-2">
+                <i class="bi bi-house-door me-2"></i>
+                Beranda
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+    </div>
+
+    <!-- step 4 header -->
+    <main class="main-content p-4">
+      <header class="mb-4">
+        <h2 class="fw-bold">Selamat Datang Kembali</h2>
+        <p class="text-muted">
+          Temukan musik baru dan nikmati playlist favoritmu
+        </p>
+      </header>
+      <!-- step 5 search bar-->
+      <div class="position-relative mb-4">
+        <div class="input-group">
+          <span class="input-group-text bg-white">
+            <i class="bi bi-search"></i>
+          </span>
+          <input
+            type="search"
+            id="searchInput"
+            class="form-control border-start-0"
+            placeholder="Cari artis, lagu, atau album..."
+            onkeydown="if(event.key === 'Enter') searchMusic()"
+          />
+          <button class="btn btn-danger" onclick="searchMusic()">Cari</button>
+        </div>
+      </div>
+      <!-- step 6 hasil pencarian -->
+      <div id="results" class="mb-5"></div>
+    </main>
+
+    <!-- step 7 music player -->
+    <div class="player-bar bg-white shadow-sm border-top p-2">
+      <div class="container-fluid">
+        <div class="d-flex align-items-center">
+          <div class="flex-grow-1">
+            <h6 class="mb-0" id="nowPlaying">Pilih Lagu</h6>
+            <small class="text-muted" id="artistName"
+              >Belum ada yang diputar</small
+            >
+          </div>
+          <audio id="audioPlayer" controls class="ms-3"></audio>
+        </div>
+      </div>
+    </div>
+
+    <!-- step 8 inisialisasi JavaScript -->
+    <script>
+      function musicApp() {
+        return {
+          init() {
+            // Inisialisasi aplikasi
+          },
+        };
+      }
+    </script>
+
+    <!-- step 9 menghubungkan antara JavaScript dengan tampilan web -->
+    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

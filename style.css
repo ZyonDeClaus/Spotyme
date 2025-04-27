@@ -1,0 +1,39 @@
+.sidebar {
+  width: 250px;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+}
+.main-content {
+  margin-left: 250px;
+}
+.player-bar {
+  position: fixed;
+  bottom: 0;
+  left: 250px;
+  right: 0;
+  z-index: 1000;
+}
+.nav-link.active {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border-right: 4px solid #dc3545;
+}
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.song {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.song-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#results {
+  margin-top: 20px;
+}
